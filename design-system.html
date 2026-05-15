@@ -1,0 +1,1302 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Klyver — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* =========================================================
+     KLYVER · FONTES LOCAIS · Neue Haas Grotesk Display Pro
+     ========================================================= */
+  @font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayXXThin.ttf") format("truetype");
+    font-weight: 100; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayXXThinItalic.ttf") format("truetype");
+    font-weight: 100; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayXThin.ttf") format("truetype");
+    font-weight: 200; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayXThinItalic.ttf") format("truetype");
+    font-weight: 200; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayThin.ttf") format("truetype");
+    font-weight: 300; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayThinItalic.ttf") format("truetype");
+    font-weight: 300; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayLight.ttf") format("truetype");
+    font-weight: 350; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayLightItalic.ttf") format("truetype");
+    font-weight: 350; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayRoman.ttf") format("truetype");
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayRomanItalic.ttf") format("truetype");
+    font-weight: 400; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayMediu.ttf") format("truetype");
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayMediumItalic.ttf") format("truetype");
+    font-weight: 500; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayBold.ttf") format("truetype");
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayBoldItalic.ttf") format("truetype");
+    font-weight: 700; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayBlack.ttf") format("truetype");
+    font-weight: 900; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayBlackItalic.ttf") format("truetype");
+    font-weight: 900; font-style: italic; font-display: swap;
+  }
+
+  /* =========================================================
+     KLYVER · DESIGN SYSTEM TOKENS
+     ========================================================= */
+  :root {
+    /* Brand · Cores primárias */
+    --klyver-cyan-50:  #E6FBFB;
+    --klyver-cyan-100: #BFF5F5;
+    --klyver-cyan-200: #80EAEA;
+    --klyver-cyan-300: #40DFDF;
+    --klyver-cyan-400: #1FD4D4;
+    --klyver-cyan-500: #00C9C9;   /* core */
+    --klyver-cyan-600: #00A0A0;
+    --klyver-cyan-700: #007878;
+    --klyver-cyan-800: #005050;
+    --klyver-cyan-900: #002828;
+
+    /* Brand · Cores secundárias (violeta) */
+    --klyver-violet-50:  #F2EBFF;
+    --klyver-violet-100: #DBC7FF;
+    --klyver-violet-200: #B894FF;
+    --klyver-violet-300: #9A6EFF;
+    --klyver-violet-400: #8A52F5;
+    --klyver-violet-500: #7C3AED;   /* core */
+    --klyver-violet-600: #6325C7;
+    --klyver-violet-700: #4C1D95;
+    --klyver-violet-800: #371573;
+    --klyver-violet-900: #220E4A;
+
+    /* Neutros (dark-first) */
+    --ink-0:   #FFFFFF;
+    --ink-50:  #F5F7FA;
+    --ink-100: #E4E8EE;
+    --ink-200: #B8C0CC;
+    --ink-300: #8993A3;
+    --ink-400: #5C6678;
+    --ink-500: #3A4253;
+    --ink-600: #232938;
+    --ink-700: #161C29;
+    --ink-800: #0E1320;
+    --ink-900: #070A14;
+    --ink-950: #03060E;
+    --ink-1000:#000000;
+
+    /* Superfícies semânticas */
+    --bg-canvas:   var(--ink-950);
+    --bg-surface:  rgba(255,255,255,0.03);
+    --bg-elevated: rgba(255,255,255,0.05);
+    --bg-glass:    rgba(255,255,255,0.06);
+    --stroke:      rgba(255,255,255,0.08);
+    --stroke-strong: rgba(255,255,255,0.16);
+    --stroke-cyan: rgba(0,201,201,0.35);
+
+    /* Texto */
+    --fg-primary:   #F5F7FA;
+    --fg-secondary: #B8C0CC;
+    --fg-tertiary:  #6E7889;
+    --fg-disabled:  #3A4253;
+    --fg-on-cyan:   #00171A;
+    --fg-on-violet: #FFFFFF;
+
+    /* Feedback */
+    --success: #22D38A;
+    --warning: #F5B547;
+    --danger:  #FF5470;
+    --info:    var(--klyver-cyan-500);
+
+    /* Gradientes assinatura */
+    --grad-aurora: radial-gradient(120% 100% at 50% 0%, rgba(0,201,201,.35) 0%, rgba(124,58,237,.20) 35%, rgba(3,6,14,0) 70%);
+    --grad-rim:    linear-gradient(135deg, var(--klyver-cyan-400) 0%, var(--klyver-violet-500) 100%);
+    --grad-button: linear-gradient(180deg, var(--klyver-violet-400) 0%, var(--klyver-violet-600) 100%);
+    --grad-cyan:   linear-gradient(180deg, var(--klyver-cyan-300) 0%, var(--klyver-cyan-600) 100%);
+    --grad-ink:    linear-gradient(180deg, rgba(20,28,45,.7) 0%, rgba(7,10,20,.9) 100%);
+
+    /* Tipografia */
+    --font-display: "Neue Haas Grotesk Display", "Helvetica Neue", Arial, sans-serif;
+    --font-body:    "Neue Haas Grotesk Display", "Helvetica Neue", Arial, sans-serif;
+    --font-mono:    "JetBrains Mono", ui-monospace, Menlo, monospace;
+
+    --fs-display-1: clamp(2.8rem, 5.6vw, 4.5rem);
+    --fs-display-2: clamp(2.2rem, 4.4vw, 3.5rem);
+    --fs-h1: clamp(1.9rem, 3vw, 2.5rem);
+    --fs-h2: clamp(1.5rem, 2.4vw, 1.9rem);
+    --fs-h3: 1.25rem;
+    --fs-h4: 1.05rem;
+    --fs-body-lg: 1.05rem;
+    --fs-body:    1rem;
+    --fs-body-sm: 0.875rem;
+    --fs-caption: 0.75rem;
+    --fs-overline:0.6875rem;
+
+    --lh-tight: 1.1;
+    --lh-snug:  1.25;
+    --lh-base:  1.55;
+    --lh-loose: 1.75;
+
+    --tracking-tight: -0.02em;
+    --tracking-base:  0;
+    --tracking-wide:  0.08em;
+    --tracking-widest:0.18em;
+
+    /* Espaçamento (base 4) */
+    --sp-0: 0;
+    --sp-1: 4px;
+    --sp-2: 8px;
+    --sp-3: 12px;
+    --sp-4: 16px;
+    --sp-5: 20px;
+    --sp-6: 24px;
+    --sp-8: 32px;
+    --sp-10: 40px;
+    --sp-12: 48px;
+    --sp-16: 64px;
+    --sp-20: 80px;
+    --sp-24: 96px;
+    --sp-32: 128px;
+
+    /* Raios */
+    --r-xs: 6px;
+    --r-sm: 10px;
+    --r-md: 14px;
+    --r-lg: 20px;
+    --r-xl: 28px;
+    --r-2xl: 36px;
+    --r-pill: 999px;
+
+    /* Sombras + Glow */
+    --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+    --shadow-md: 0 8px 24px rgba(0,0,0,.35);
+    --shadow-lg: 0 22px 60px rgba(0,0,0,.55);
+    --glow-cyan: 0 0 0 1px rgba(0,201,201,.25), 0 12px 60px -10px rgba(0,201,201,.45);
+    --glow-violet: 0 0 0 1px rgba(124,58,237,.30), 0 14px 60px -8px rgba(124,58,237,.55);
+    --inner-glass: inset 0 1px 0 rgba(255,255,255,.08), inset 0 0 0 1px rgba(255,255,255,.05);
+
+    /* Transições */
+    --ease-out: cubic-bezier(.2,.7,.2,1);
+    --ease-spring: cubic-bezier(.34,1.56,.64,1);
+    --dur-1: 120ms;
+    --dur-2: 200ms;
+    --dur-3: 320ms;
+    --dur-4: 520ms;
+
+    /* Layout */
+    --container: 1200px;
+    --container-narrow: 880px;
+  }
+
+  /* =========================================================
+     RESET MÍNIMO
+     ========================================================= */
+  *,*::before,*::after { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    line-height: var(--lh-base);
+    color: var(--fg-primary);
+    background: var(--bg-canvas);
+    overflow-x: hidden;
+  }
+  img, svg { display: block; max-width: 100%; }
+  button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--klyver-cyan-500); color: var(--fg-on-cyan); }
+
+  /* =========================================================
+     PADRÕES VISUAIS DE FUNDO (anéis topográficos + aurora)
+     ========================================================= */
+  .page-bg {
+    position: fixed; inset: 0; z-index: -1;
+    background:
+      radial-gradient(60% 50% at 85% 10%, rgba(0,201,201,.12), transparent 60%),
+      radial-gradient(50% 40% at 10% 90%, rgba(124,58,237,.18), transparent 60%),
+      var(--bg-canvas);
+  }
+  .page-bg::after {
+    content:"";
+    position:absolute; inset:-20%;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200' viewBox='0 0 1200 1200'><g fill='none' stroke='%2300C9C9' stroke-opacity='.06'><circle cx='600' cy='600' r='80'/><circle cx='600' cy='600' r='140'/><circle cx='600' cy='600' r='200'/><circle cx='600' cy='600' r='260'/><circle cx='600' cy='600' r='320'/><circle cx='600' cy='600' r='380'/><circle cx='600' cy='600' r='440'/><circle cx='600' cy='600' r='500'/><circle cx='600' cy='600' r='560'/></g></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: min(1400px, 130vmax);
+    opacity: .55;
+    mask-image: radial-gradient(closest-side, #000 30%, transparent 75%);
+  }
+
+  /* =========================================================
+     LAYOUT
+     ========================================================= */
+  .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--sp-6); }
+  .container.narrow { max-width: var(--container-narrow); }
+
+  .section { padding-block: clamp(var(--sp-16), 8vw, var(--sp-24)); }
+  .section-head { margin-bottom: var(--sp-12); max-width: 720px; }
+
+  .grid { display: grid; gap: var(--sp-6); }
+  .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols-6 { grid-template-columns: repeat(6, 1fr); }
+  @media (max-width: 900px) {
+    .grid.cols-3, .grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid.cols-6 { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .grid.cols-2, .grid.cols-3, .grid.cols-4 { grid-template-columns: 1fr; }
+    .grid.cols-6 { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* =========================================================
+     TIPOGRAFIA
+     ========================================================= */
+  .display-1, .display-2, h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--tracking-tight); line-height: var(--lh-tight); margin: 0; color: var(--fg-primary); }
+  .display-1 { font-size: var(--fs-display-1); font-weight: 700; }
+  .display-2 { font-size: var(--fs-display-2); font-weight: 700; }
+  h1 { font-size: var(--fs-h1); }
+  h2 { font-size: var(--fs-h2); }
+  h3 { font-size: var(--fs-h3); font-weight: 600; }
+  h4 { font-size: var(--fs-h4); font-weight: 600; }
+  p  { margin: 0; color: var(--fg-secondary); line-height: var(--lh-base); }
+  .lead { font-size: var(--fs-body-lg); color: var(--fg-secondary); }
+  .overline { font-family: var(--font-mono); font-size: var(--fs-overline); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: var(--klyver-cyan-400); }
+  .muted { color: var(--fg-tertiary); }
+  .mono  { font-family: var(--font-mono); }
+
+  .text-gradient {
+    background: linear-gradient(120deg, #fff 0%, var(--klyver-cyan-300) 50%, var(--klyver-violet-300) 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+
+  /* =========================================================
+     LOGO
+     ========================================================= */
+  .logo-mark { display:inline-flex; align-items:center; gap: var(--sp-3); }
+  .logo-img {
+    width: 44px; height: 44px;
+    border-radius: var(--r-md);
+    object-fit: cover;
+    display: block;
+  }
+  .logo-img-lg { width: 110px; height: 110px; border-radius: 26px; }
+  .logo-word { font-family: var(--font-display); font-weight: 600; letter-spacing: .14em; font-size: 1.05rem; }
+
+  /* =========================================================
+     NAVBAR
+     ========================================================= */
+  .nav {
+    position: sticky; top: var(--sp-4); z-index: 50;
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    background: rgba(7,10,20,.6);
+    border: 1px solid var(--stroke);
+    border-radius: var(--r-pill);
+    padding: var(--sp-2) var(--sp-2) var(--sp-2) var(--sp-5);
+    display: flex; align-items: center; gap: var(--sp-6);
+    box-shadow: var(--shadow-md);
+  }
+  .nav-links { display: flex; gap: var(--sp-2); margin-left: auto; }
+  .nav-link {
+    padding: 10px 16px; border-radius: var(--r-pill);
+    font-size: var(--fs-body-sm); color: var(--fg-secondary);
+    transition: color var(--dur-2) var(--ease-out), background var(--dur-2) var(--ease-out);
+  }
+  .nav-link:hover { color: var(--fg-primary); background: var(--bg-surface); }
+  .nav-link.active { color: var(--fg-primary); background: var(--bg-glass); border: 1px solid var(--stroke); }
+  @media (max-width: 760px) { .nav-links { display: none; } }
+
+  /* =========================================================
+     BUTTONS
+     ========================================================= */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-2);
+    padding: 12px 20px;
+    font-family: var(--font-body); font-weight: 600; font-size: var(--fs-body-sm);
+    border-radius: var(--r-pill);
+    transition: transform var(--dur-2) var(--ease-out), background var(--dur-2) var(--ease-out), box-shadow var(--dur-3) var(--ease-out), border-color var(--dur-2) var(--ease-out);
+    border: 1px solid transparent;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn .arrow { transition: transform var(--dur-2) var(--ease-out); }
+  .btn:hover .arrow { transform: translateX(3px); }
+
+  .btn-primary {
+    background: var(--grad-button);
+    color: var(--fg-on-violet);
+    box-shadow: var(--glow-violet);
+  }
+  .btn-primary:hover { box-shadow: 0 0 0 1px rgba(124,58,237,.6), 0 18px 70px -10px rgba(124,58,237,.7); }
+
+  .btn-cyan {
+    background: var(--grad-cyan);
+    color: var(--fg-on-cyan);
+    box-shadow: var(--glow-cyan);
+  }
+  .btn-cyan:hover { box-shadow: 0 0 0 1px rgba(0,201,201,.55), 0 18px 70px -10px rgba(0,201,201,.7); }
+
+  .btn-secondary {
+    background: var(--bg-glass);
+    color: var(--fg-primary);
+    border-color: var(--stroke-strong);
+    backdrop-filter: blur(10px);
+  }
+  .btn-secondary:hover { background: var(--bg-elevated); border-color: var(--stroke-cyan); }
+
+  .btn-ghost { color: var(--fg-secondary); }
+  .btn-ghost:hover { color: var(--fg-primary); background: var(--bg-surface); }
+
+  .btn-icon {
+    width: 40px; height: 40px; padding: 0; border-radius: 50%;
+    border: 1px solid var(--stroke); background: var(--bg-surface);
+  }
+  .btn-icon:hover { background: var(--bg-elevated); border-color: var(--stroke-cyan); }
+
+  .btn-sm { padding: 8px 14px; font-size: 12px; }
+  .btn-lg { padding: 16px 28px; font-size: var(--fs-body); }
+
+  /* =========================================================
+     TAGS / BADGES
+     ========================================================= */
+  .tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 12px;
+    background: var(--bg-glass);
+    border: 1px solid var(--stroke);
+    border-radius: var(--r-pill);
+    color: var(--fg-secondary);
+    font-size: var(--fs-caption);
+    font-family: var(--font-mono);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+  }
+  .tag.cyan { color: var(--klyver-cyan-300); border-color: rgba(0,201,201,.35); background: rgba(0,201,201,.08); }
+  .tag.violet { color: var(--klyver-violet-200); border-color: rgba(124,58,237,.35); background: rgba(124,58,237,.10); }
+  .tag .dot { width:6px; height:6px; border-radius:50%; background: currentColor; box-shadow: 0 0 10px currentColor; }
+
+  /* =========================================================
+     CARDS (Glass)
+     ========================================================= */
+  .card {
+    position: relative;
+    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+    border: 1px solid var(--stroke);
+    border-radius: var(--r-lg);
+    padding: var(--sp-6);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: var(--inner-glass), var(--shadow-md);
+    transition: transform var(--dur-3) var(--ease-out), border-color var(--dur-2) var(--ease-out), box-shadow var(--dur-3) var(--ease-out);
+  }
+  .card:hover { border-color: var(--stroke-strong); transform: translateY(-2px); }
+  .card.glow-cyan:hover   { box-shadow: var(--glow-cyan); border-color: rgba(0,201,201,.35); }
+  .card.glow-violet:hover { box-shadow: var(--glow-violet); border-color: rgba(124,58,237,.4); }
+  .card-header { display: flex; align-items: center; gap: var(--sp-3); margin-bottom: var(--sp-4); }
+  .card-title { margin-bottom: var(--sp-2); }
+  .card-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    display: grid; place-items: center;
+    background: linear-gradient(180deg, rgba(0,201,201,.18), rgba(0,201,201,.04));
+    border: 1px solid rgba(0,201,201,.25);
+    color: var(--klyver-cyan-300);
+  }
+
+  /* =========================================================
+     INPUTS
+     ========================================================= */
+  .field { display: flex; flex-direction: column; gap: var(--sp-2); }
+  .field label { font-size: var(--fs-caption); color: var(--fg-tertiary); font-family: var(--font-mono); letter-spacing: var(--tracking-wide); text-transform: uppercase; }
+  .input, .textarea, .select {
+    width: 100%;
+    padding: 12px 16px;
+    font: inherit; color: var(--fg-primary);
+    background: rgba(255,255,255,.04);
+    border: 1px solid var(--stroke);
+    border-radius: var(--r-md);
+    transition: border-color var(--dur-2) var(--ease-out), box-shadow var(--dur-2) var(--ease-out), background var(--dur-2) var(--ease-out);
+  }
+  .input:focus, .textarea:focus, .select:focus {
+    outline: none;
+    border-color: var(--klyver-cyan-400);
+    box-shadow: 0 0 0 4px rgba(0,201,201,.15);
+    background: rgba(255,255,255,.06);
+  }
+  .input::placeholder, .textarea::placeholder { color: var(--fg-tertiary); }
+  .textarea { resize: vertical; min-height: 120px; }
+  .help { font-size: var(--fs-caption); color: var(--fg-tertiary); }
+
+  .input-group { position: relative; }
+  .input-group .input { padding-right: 96px; }
+  .input-group .btn { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); }
+
+  /* =========================================================
+     FAQ / ACCORDION
+     ========================================================= */
+  details.faq {
+    background: rgba(255,255,255,.025);
+    border: 1px solid var(--stroke);
+    border-radius: var(--r-md);
+    padding: var(--sp-4) var(--sp-6);
+    transition: border-color var(--dur-2) var(--ease-out), background var(--dur-2) var(--ease-out);
+  }
+  details.faq + details.faq { margin-top: var(--sp-3); }
+  details.faq[open] { border-color: var(--stroke-cyan); background: rgba(0,201,201,.04); }
+  details.faq summary {
+    list-style: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4);
+    color: var(--fg-primary); font-weight: 500;
+  }
+  details.faq summary::-webkit-details-marker { display: none; }
+  details.faq summary::after {
+    content:"+"; font-family: var(--font-mono); color: var(--klyver-cyan-300); font-size: 1.4rem;
+    transition: transform var(--dur-2) var(--ease-out);
+  }
+  details.faq[open] summary::after { transform: rotate(45deg); }
+  details.faq p { margin-top: var(--sp-3); color: var(--fg-secondary); }
+
+  /* =========================================================
+     STATS
+     ========================================================= */
+  .stat .num { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: var(--tracking-tight); }
+  .stat .label { color: var(--fg-tertiary); font-size: var(--fs-body-sm); }
+
+  /* =========================================================
+     SWATCH (paleta)
+     ========================================================= */
+  .swatch {
+    border-radius: var(--r-md); overflow: hidden;
+    border: 1px solid var(--stroke);
+    background: var(--bg-surface);
+  }
+  .swatch .chip { aspect-ratio: 5/3; }
+  .swatch .meta { padding: var(--sp-3) var(--sp-4); font-family: var(--font-mono); font-size: var(--fs-caption); display: flex; justify-content: space-between; }
+  .swatch .meta .name { color: var(--fg-primary); }
+  .swatch .meta .hex { color: var(--fg-tertiary); text-transform: uppercase; }
+
+  /* =========================================================
+     TYPE SCALE TABLE
+     ========================================================= */
+  .type-row { display: grid; grid-template-columns: 200px 1fr; gap: var(--sp-6); align-items: baseline; padding: var(--sp-4) 0; border-bottom: 1px dashed var(--stroke); }
+  .type-row .meta { color: var(--fg-tertiary); font-family: var(--font-mono); font-size: var(--fs-caption); }
+  @media (max-width: 640px) { .type-row { grid-template-columns: 1fr; } }
+
+  /* =========================================================
+     ICONOGRAPHY DEMO
+     ========================================================= */
+  .icon-tile {
+    aspect-ratio: 1/1;
+    display: grid; place-items: center;
+    border: 1px solid var(--stroke); border-radius: var(--r-md);
+    background: var(--bg-surface);
+    color: var(--fg-secondary);
+    transition: color var(--dur-2) var(--ease-out), border-color var(--dur-2) var(--ease-out), background var(--dur-2) var(--ease-out);
+  }
+  .icon-tile:hover { color: var(--klyver-cyan-300); border-color: var(--stroke-cyan); background: rgba(0,201,201,.05); }
+
+  /* =========================================================
+     HERO (exemplo de composição)
+     ========================================================= */
+  .hero {
+    position: relative;
+    padding-block: clamp(var(--sp-16), 10vw, var(--sp-24));
+    text-align: center;
+  }
+  .hero .glass-icon {
+    width: 110px; height: 110px;
+    margin: 0 auto var(--sp-6);
+    border-radius: 26px;
+    background:
+      radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,.15), transparent 60%),
+      linear-gradient(180deg, rgba(11,20,28,.85), rgba(3,6,14,.95));
+    border: 1px solid rgba(255,255,255,.10);
+    box-shadow: 0 30px 80px rgba(0,201,201,.20), inset 0 1px 0 rgba(255,255,255,.12);
+    display: grid; place-items: center;
+    position: relative; overflow: hidden;
+  }
+  .hero .glass-icon::after {
+    content:""; position:absolute; inset:-30%;
+    background: conic-gradient(from 220deg, rgba(0,201,201,.0), rgba(0,201,201,.35), rgba(0,201,201,0));
+    filter: blur(20px);
+    animation: spin 9s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(1turn); } }
+  .hero .glass-icon svg { position: relative; }
+
+  .testimonial-marquee { display:flex; gap: var(--sp-6); flex-wrap: wrap; justify-content: center; }
+  .avatar-stack { display: flex; }
+  .avatar-stack .av { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--bg-canvas); margin-left: -10px; background: linear-gradient(135deg, var(--klyver-cyan-400), var(--klyver-violet-500)); }
+  .avatar-stack .av:first-child { margin-left: 0; }
+
+  /* =========================================================
+     SEÇÃO HEADER DE DESIGN SYSTEM
+     ========================================================= */
+  .ds-section-id { font-family: var(--font-mono); color: var(--klyver-cyan-400); font-size: var(--fs-caption); letter-spacing: var(--tracking-wide); text-transform: uppercase; }
+  .ds-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--stroke), transparent); margin-block: var(--sp-16); }
+
+  /* =========================================================
+     UTILS
+     ========================================================= */
+  .row { display: flex; gap: var(--sp-3); flex-wrap: wrap; align-items: center; }
+  .row.center { justify-content: center; }
+  .col { display: flex; flex-direction: column; gap: var(--sp-3); }
+  .between { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); }
+  .center-text { text-align: center; }
+  .mt-2 { margin-top: var(--sp-2); } .mt-4 { margin-top: var(--sp-4); }
+  .mt-6 { margin-top: var(--sp-6); } .mt-8 { margin-top: var(--sp-8); }
+  .mt-12 { margin-top: var(--sp-12); }
+  .mb-2 { margin-bottom: var(--sp-2); } .mb-4 { margin-bottom: var(--sp-4); }
+  .mb-6 { margin-bottom: var(--sp-6); } .mb-8 { margin-bottom: var(--sp-8); }
+  .mb-12 { margin-bottom: var(--sp-12); }
+
+  /* Footer */
+  .footer { padding-block: var(--sp-12); border-top: 1px solid var(--stroke); margin-top: var(--sp-24); color: var(--fg-tertiary); font-size: var(--fs-body-sm); }
+</style>
+</head>
+<body>
+
+<div class="page-bg" aria-hidden="true"></div>
+
+<div class="container" style="padding-top: var(--sp-6);">
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav" aria-label="Principal">
+    <a href="#top" class="logo-mark" aria-label="Klyver">
+      <span class="logo-glyph" aria-hidden="true">
+        <!-- K mark -->
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
+          <path d="M9 4v24M9 17l11-13M9 17l11 11" stroke="url(#kg)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="kg" x1="6" y1="4" x2="26" y2="28" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#80EAEA"/>
+              <stop offset="1" stop-color="#00C9C9"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </span>
+      <span class="logo-word">KLYVER</span>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link active" href="#foundations">Foundations</a>
+      <a class="nav-link" href="#tokens">Tokens</a>
+      <a class="nav-link" href="#components">Components</a>
+      <a class="nav-link" href="#patterns">Patterns</a>
+    </div>
+    <a class="btn btn-cyan" href="#cta">
+      Começar
+      <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <header id="top" class="hero">
+    <div class="row center mb-6">
+      <span class="tag cyan"><span class="dot"></span>Design System v1.0</span>
+      <span class="tag">Atualizado · Mai 2026</span>
+    </div>
+
+    <div class="glass-icon" aria-hidden="true">
+      <svg width="56" height="56" viewBox="0 0 32 32" fill="none">
+        <path d="M9 4v24M9 17l11-13M9 17l11 11" stroke="url(#kg2)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs>
+          <linearGradient id="kg2" x1="6" y1="4" x2="26" y2="28" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#BFF5F5"/>
+            <stop offset="1" stop-color="#00C9C9"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <h1 class="display-1"><span class="text-gradient">Klyver</span> Design System</h1>
+    <p class="lead mt-4" style="max-width: 640px; margin-inline: auto;">
+      A linguagem visual da Klyver: dark mode, anéis topográficos, ciano + violeta e a sensação de
+      um sistema — não de mais um site.
+    </p>
+
+    <div class="row center mt-8">
+      <a href="#components" class="btn btn-primary btn-lg">
+        Explorar componentes
+        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#tokens" class="btn btn-secondary btn-lg">Ver design tokens</a>
+    </div>
+
+    <div class="mt-12 row center">
+      <div class="avatar-stack" aria-hidden="true">
+        <span class="av"></span><span class="av"></span><span class="av"></span><span class="av"></span>
+      </div>
+      <p class="muted" style="font-size: var(--fs-body-sm);">Construído para experts, lançamentos e produtos digitais de alto valor.</p>
+    </div>
+  </header>
+
+  <div class="ds-divider"></div>
+
+  <!-- ===================== 01 · FOUNDATIONS / BRAND ===================== -->
+  <section id="foundations" class="section">
+    <div class="section-head">
+      <span class="ds-section-id">01 · Foundations</span>
+      <h2 class="display-2 mt-2">Marca</h2>
+      <p class="lead mt-4">A marca Klyver é construída em três camadas: o símbolo (K), o wordmark e o padrão de anéis concêntricos que evoca topografia, frequência e sistema.</p>
+    </div>
+
+    <div class="grid cols-3">
+      <!-- Símbolo -->
+      <article class="card">
+        <header class="card-header">
+          <span class="tag">Símbolo</span>
+        </header>
+        <div style="aspect-ratio: 1/1; display:grid; place-items:center; background:
+          radial-gradient(60% 60% at 50% 30%, rgba(0,201,201,.18), transparent 70%),
+          linear-gradient(180deg, #0A1320, #03060E);
+          border-radius: var(--r-md); border: 1px solid var(--stroke); position: relative; overflow:hidden;">
+          <svg width="140" height="140" viewBox="0 0 320 320" aria-hidden="true" style="position:absolute; inset:0; margin:auto; opacity:.35;">
+            <g fill="none" stroke="#00C9C9" stroke-opacity=".6">
+              <circle cx="160" cy="160" r="40"/>
+              <circle cx="160" cy="160" r="70"/>
+              <circle cx="160" cy="160" r="100"/>
+              <circle cx="160" cy="160" r="130"/>
+              <circle cx="160" cy="160" r="158"/>
+            </g>
+          </svg>
+          <svg width="86" height="86" viewBox="0 0 32 32" style="position:relative;">
+            <path d="M9 4v24M9 17l11-13M9 17l11 11" stroke="url(#kg3)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <defs>
+              <linearGradient id="kg3" x1="6" y1="4" x2="26" y2="28">
+                <stop stop-color="#BFF5F5"/><stop offset="1" stop-color="#00C9C9"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h4 class="card-title mt-4">K-Mark</h4>
+        <p>O símbolo isolado funciona como app icon e favicon. Sempre sobre fundo escuro com leve glow ciano.</p>
+      </article>
+
+      <!-- Wordmark -->
+      <article class="card">
+        <header class="card-header">
+          <span class="tag">Wordmark</span>
+        </header>
+        <div style="aspect-ratio: 1/1; display:grid; place-items:center; background: linear-gradient(180deg, #0A1320, #03060E); border-radius: var(--r-md); border: 1px solid var(--stroke);">
+          <span style="font-family: var(--font-display); font-weight: 700; font-size: 2.5rem; letter-spacing: .18em;">KLYVER</span>
+        </div>
+        <h4 class="card-title mt-4">Klyver wordmark</h4>
+        <p>Caixa alta, tracking .18em, peso 700. Usar isolado em headers de assinatura ou junto ao símbolo.</p>
+      </article>
+
+      <!-- Padrão -->
+      <article class="card">
+        <header class="card-header">
+          <span class="tag">Pattern</span>
+        </header>
+        <div style="aspect-ratio: 1/1; background:
+          radial-gradient(60% 60% at 30% 70%, rgba(0,201,201,.25), transparent 60%),
+          linear-gradient(180deg, #0A1320, #03060E);
+          border-radius: var(--r-md); border: 1px solid var(--stroke); position: relative; overflow:hidden;">
+          <svg width="100%" height="100%" viewBox="0 0 320 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position:absolute; inset:0;">
+            <g fill="none" stroke="#00C9C9" stroke-opacity=".5">
+              <circle cx="120" cy="220" r="40"/>
+              <circle cx="120" cy="220" r="70"/>
+              <circle cx="120" cy="220" r="100"/>
+              <circle cx="120" cy="220" r="130"/>
+              <circle cx="120" cy="220" r="160"/>
+              <circle cx="120" cy="220" r="190"/>
+              <circle cx="120" cy="220" r="220"/>
+            </g>
+          </svg>
+        </div>
+        <h4 class="card-title mt-4">Anéis topográficos</h4>
+        <p>Assinatura visual da marca. Usar como camada de fundo, off-center, com 30–60% de opacidade.</p>
+      </article>
+    </div>
+
+    <!-- Princípios -->
+    <div class="mt-12">
+      <span class="ds-section-id">Princípios</span>
+      <div class="grid cols-4 mt-4">
+        <div class="card glow-cyan">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h4 class="card-title">Clareza absoluta</h4>
+          <p>Cada elemento ganha o seu lugar. Sem ruído, sem decoração que não comunica.</p>
+        </div>
+        <div class="card glow-cyan">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h4 class="card-title">Sistema, não site</h4>
+          <p>Componentes que se conversam. Reuso antes de nova criação.</p>
+        </div>
+        <div class="card glow-cyan">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h4 class="card-title">Foco no núcleo</h4>
+          <p>Hierarquia rígida, contraste alto, CTA inequívoco em cada bloco.</p>
+        </div>
+        <div class="card glow-cyan">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 7l14 10M5 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h4 class="card-title">Tensão luminosa</h4>
+          <p>Ciano + violeta sobre preto. Profundidade por glow, nunca por sombras pesadas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ds-divider"></div>
+
+  <!-- ===================== 02 · TOKENS ===================== -->
+  <section id="tokens" class="section">
+    <div class="section-head">
+      <span class="ds-section-id">02 · Tokens</span>
+      <h2 class="display-2 mt-2">Cor</h2>
+      <p class="lead mt-4">Paleta dark-first. Ciano é a tinta da marca; violeta carrega a conversão; neutros desenham o palco.</p>
+    </div>
+
+    <!-- Cyan scale -->
+    <h3 class="mb-4">Klyver Cyan</h3>
+    <div class="grid cols-6">
+      <div class="swatch"><div class="chip" style="background: var(--klyver-cyan-100)"></div><div class="meta"><span class="name">cyan-100</span><span class="hex">#BFF5F5</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--klyver-cyan-200)"></div><div class="meta"><span class="name">cyan-200</span><span class="hex">#80EAEA</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--klyver-cyan-300)"></div><div class="meta"><span class="name">cyan-300</span><span class="hex">#40DFDF</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--klyver-cyan-500); box-shadow: 0 0 30px rgba(0,201,201,.4) inset;"></div><div class="meta"><span class="name">cyan-500 ★</span><span class="hex">#00C9C9</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--klyver-cyan-700)"></div><div class="meta"><span class="name">cyan-700</span><span class="hex">#007878</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--klyver-cyan-900)"></div><div class="meta"><span class="name">cyan-900</span><span class="hex">#002828</span></div></div>
+    </div>
+
+    <!-- Violet scale -->
+    <h3 class="mb-4 mt-12">Klyver Violet</h3>
+    <div class="grid cols-6">
+      <div class="swatch"><div class="chip" style="background: var(--klyver-violet-100)"></div><div class="meta"><span class="name">violet-100</span><span class="hex">#DBC7FF</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--klyver-violet-200)"></div><div class="meta"><span class="name">violet-200</span><span class="hex">#B894FF</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--klyver-violet-300)"></div><div class="meta"><span class="name">violet-300</span><span class="hex">#9A6EFF</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--klyver-violet-500); box-shadow: 0 0 30px rgba(124,58,237,.4) inset;"></div><div class="meta"><span class="name">violet-500 ★</span><span class="hex">#7C3AED</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--klyver-violet-700)"></div><div class="meta"><span class="name">violet-700</span><span class="hex">#4C1D95</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--klyver-violet-900)"></div><div class="meta"><span class="name">violet-900</span><span class="hex">#220E4A</span></div></div>
+    </div>
+
+    <!-- Neutrals -->
+    <h3 class="mb-4 mt-12">Neutrals (Ink)</h3>
+    <div class="grid cols-6">
+      <div class="swatch"><div class="chip" style="background: var(--ink-0)"></div><div class="meta"><span class="name">ink-0</span><span class="hex">#FFFFFF</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--ink-100)"></div><div class="meta"><span class="name">ink-100</span><span class="hex">#E4E8EE</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--ink-300)"></div><div class="meta"><span class="name">ink-300</span><span class="hex">#8993A3</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--ink-600)"></div><div class="meta"><span class="name">ink-600</span><span class="hex">#232938</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--ink-800)"></div><div class="meta"><span class="name">ink-800</span><span class="hex">#0E1320</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--ink-950)"></div><div class="meta"><span class="name">ink-950 ★</span><span class="hex">#03060E</span></div></div>
+    </div>
+
+    <!-- Semantic -->
+    <h3 class="mb-4 mt-12">Semantic</h3>
+    <div class="grid cols-4">
+      <div class="swatch"><div class="chip" style="background: var(--success)"></div><div class="meta"><span class="name">success</span><span class="hex">#22D38A</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--warning)"></div><div class="meta"><span class="name">warning</span><span class="hex">#F5B547</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--danger)"></div><div class="meta"><span class="name">danger</span><span class="hex">#FF5470</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--info)"></div><div class="meta"><span class="name">info</span><span class="hex">#00C9C9</span></div></div>
+    </div>
+
+    <!-- ============ TYPOGRAPHY ============ -->
+    <div class="section-head mt-12">
+      <h2 class="display-2">Tipografia</h2>
+      <p class="lead mt-4"><strong style="color:var(--fg-primary)">Space Grotesk</strong> para títulos e marca · <strong style="color:var(--fg-primary)">Inter</strong> para corpo e UI · <strong style="color:var(--fg-primary)">JetBrains Mono</strong> para metadados.</p>
+    </div>
+
+    <div class="card">
+      <div class="type-row">
+        <div class="meta">Display 1 · 700 · -.02em</div>
+        <div class="display-1">Sistema, não site.</div>
+      </div>
+      <div class="type-row">
+        <div class="meta">Display 2 · 700</div>
+        <div class="display-2">Estrutura que escala.</div>
+      </div>
+      <div class="type-row">
+        <div class="meta">H1 · 600</div>
+        <h1>Construindo a confiança.</h1>
+      </div>
+      <div class="type-row">
+        <div class="meta">H2 · 600</div>
+        <h2>Cada bloco em seu lugar</h2>
+      </div>
+      <div class="type-row">
+        <div class="meta">H3 · 600</div>
+        <h3>Componentes que conversam entre si</h3>
+      </div>
+      <div class="type-row">
+        <div class="meta">Body · 400</div>
+        <p>A Klyver entrega presença digital de alto valor para experts, lançamentos e empresas que tratam o site como motor de receita.</p>
+      </div>
+      <div class="type-row">
+        <div class="meta">Body Small · 400</div>
+        <p style="font-size: var(--fs-body-sm)">Texto auxiliar, helpers de formulário, captions e legendas.</p>
+      </div>
+      <div class="type-row">
+        <div class="meta">Overline · mono</div>
+        <span class="overline">Lançamento · Q2 2026</span>
+      </div>
+    </div>
+
+    <!-- ============ SPACING ============ -->
+    <div class="section-head mt-12">
+      <h2 class="display-2">Espaçamento</h2>
+      <p class="lead mt-4">Base 4px. Use ritmo consistente: gap interno em 4/8/12; respiro de seções em 64/96/128.</p>
+    </div>
+    <div class="card">
+      <div style="display:grid; gap: var(--sp-3);">
+        <div style="display:flex; align-items:center; gap: var(--sp-4);"><span class="mono muted" style="width:80px;">4 · xs</span><span style="height:8px; width:4px;  background: var(--klyver-cyan-500);"></span></div>
+        <div style="display:flex; align-items:center; gap: var(--sp-4);"><span class="mono muted" style="width:80px;">8 · sm</span><span style="height:8px; width:8px;  background: var(--klyver-cyan-500);"></span></div>
+        <div style="display:flex; align-items:center; gap: var(--sp-4);"><span class="mono muted" style="width:80px;">16 · md</span><span style="height:8px; width:16px; background: var(--klyver-cyan-500);"></span></div>
+        <div style="display:flex; align-items:center; gap: var(--sp-4);"><span class="mono muted" style="width:80px;">24 · lg</span><span style="height:8px; width:24px; background: var(--klyver-cyan-500);"></span></div>
+        <div style="display:flex; align-items:center; gap: var(--sp-4);"><span class="mono muted" style="width:80px;">32 · xl</span><span style="height:8px; width:32px; background: var(--klyver-cyan-500);"></span></div>
+        <div style="display:flex; align-items:center; gap: var(--sp-4);"><span class="mono muted" style="width:80px;">48 · 2xl</span><span style="height:8px; width:48px; background: var(--klyver-cyan-500);"></span></div>
+        <div style="display:flex; align-items:center; gap: var(--sp-4);"><span class="mono muted" style="width:80px;">64 · 3xl</span><span style="height:8px; width:64px; background: var(--klyver-cyan-500);"></span></div>
+        <div style="display:flex; align-items:center; gap: var(--sp-4);"><span class="mono muted" style="width:80px;">96 · 4xl</span><span style="height:8px; width:96px; background: var(--klyver-cyan-500);"></span></div>
+        <div style="display:flex; align-items:center; gap: var(--sp-4);"><span class="mono muted" style="width:80px;">128 · 5xl</span><span style="height:8px; width:128px; background: var(--klyver-cyan-500);"></span></div>
+      </div>
+    </div>
+
+    <!-- ============ RADII / ELEVATION ============ -->
+    <div class="grid cols-2 mt-12">
+      <div>
+        <h3 class="mb-4">Raios</h3>
+        <div class="grid cols-3">
+          <div class="card" style="text-align:center; padding: var(--sp-4);">
+            <div style="height:60px; border:1px solid var(--stroke-cyan); border-radius: var(--r-sm); background: rgba(0,201,201,.05);"></div>
+            <p class="mono muted mt-2" style="font-size: var(--fs-caption)">sm · 10</p>
+          </div>
+          <div class="card" style="text-align:center; padding: var(--sp-4);">
+            <div style="height:60px; border:1px solid var(--stroke-cyan); border-radius: var(--r-md); background: rgba(0,201,201,.05);"></div>
+            <p class="mono muted mt-2" style="font-size: var(--fs-caption)">md · 14</p>
+          </div>
+          <div class="card" style="text-align:center; padding: var(--sp-4);">
+            <div style="height:60px; border:1px solid var(--stroke-cyan); border-radius: var(--r-lg); background: rgba(0,201,201,.05);"></div>
+            <p class="mono muted mt-2" style="font-size: var(--fs-caption)">lg · 20</p>
+          </div>
+          <div class="card" style="text-align:center; padding: var(--sp-4);">
+            <div style="height:60px; border:1px solid var(--stroke-cyan); border-radius: var(--r-xl); background: rgba(0,201,201,.05);"></div>
+            <p class="mono muted mt-2" style="font-size: var(--fs-caption)">xl · 28</p>
+          </div>
+          <div class="card" style="text-align:center; padding: var(--sp-4);">
+            <div style="height:60px; border:1px solid var(--stroke-cyan); border-radius: var(--r-2xl); background: rgba(0,201,201,.05);"></div>
+            <p class="mono muted mt-2" style="font-size: var(--fs-caption)">2xl · 36</p>
+          </div>
+          <div class="card" style="text-align:center; padding: var(--sp-4);">
+            <div style="height:60px; border:1px solid var(--stroke-cyan); border-radius: var(--r-pill); background: rgba(0,201,201,.05);"></div>
+            <p class="mono muted mt-2" style="font-size: var(--fs-caption)">pill · ∞</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="mb-4">Elevação & Glow</h3>
+        <div class="grid cols-2">
+          <div class="card" style="text-align:center;">
+            <div style="height:80px; border-radius: var(--r-md); background: var(--bg-elevated); box-shadow: var(--shadow-sm);"></div>
+            <p class="mono muted mt-3" style="font-size: var(--fs-caption)">shadow-sm</p>
+          </div>
+          <div class="card" style="text-align:center;">
+            <div style="height:80px; border-radius: var(--r-md); background: var(--bg-elevated); box-shadow: var(--shadow-md);"></div>
+            <p class="mono muted mt-3" style="font-size: var(--fs-caption)">shadow-md</p>
+          </div>
+          <div class="card" style="text-align:center;">
+            <div style="height:80px; border-radius: var(--r-md); background: var(--bg-elevated); box-shadow: var(--glow-cyan);"></div>
+            <p class="mono muted mt-3" style="font-size: var(--fs-caption)">glow-cyan</p>
+          </div>
+          <div class="card" style="text-align:center;">
+            <div style="height:80px; border-radius: var(--r-md); background: var(--bg-elevated); box-shadow: var(--glow-violet);"></div>
+            <p class="mono muted mt-3" style="font-size: var(--fs-caption)">glow-violet</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ds-divider"></div>
+
+  <!-- ===================== 03 · COMPONENTS ===================== -->
+  <section id="components" class="section">
+    <div class="section-head">
+      <span class="ds-section-id">03 · Components</span>
+      <h2 class="display-2 mt-2">Componentes</h2>
+      <p class="lead mt-4">Blocos atômicos prontos para produção. Cada um aceita variantes claras e estados — sem ambiguidade.</p>
+    </div>
+
+    <!-- Buttons -->
+    <h3 class="mb-4">Botões</h3>
+    <div class="card">
+      <div class="row mb-6">
+        <button class="btn btn-primary">
+          Quero começar
+          <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="btn btn-cyan">Falar com a Klyver</button>
+        <button class="btn btn-secondary">Ver demo</button>
+        <button class="btn btn-ghost">Saiba mais</button>
+        <button class="btn btn-icon" aria-label="Próximo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="row">
+        <button class="btn btn-primary btn-sm">SM</button>
+        <button class="btn btn-primary">MD</button>
+        <button class="btn btn-primary btn-lg">LG</button>
+      </div>
+    </div>
+
+    <!-- Tags -->
+    <h3 class="mb-4 mt-12">Tags / Labels</h3>
+    <div class="card">
+      <div class="row">
+        <span class="tag">Lançamento</span>
+        <span class="tag cyan"><span class="dot"></span>Online</span>
+        <span class="tag violet"><span class="dot"></span>Premium</span>
+        <span class="tag">Perfil</span>
+        <span class="tag">Drive</span>
+        <span class="tag">Fotos</span>
+        <span class="tag cyan">Expert</span>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <h3 class="mb-4 mt-12">Cards</h3>
+    <div class="grid cols-3">
+      <article class="card glow-cyan">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <span class="tag">Feature</span>
+        </div>
+        <h3 class="card-title">Estrutura escalável</h3>
+        <p>Componentes desacoplados, design tokens centralizados e tema único — pronto para crescer com a sua marca.</p>
+      </article>
+
+      <article class="card glow-violet">
+        <div class="card-header">
+          <div class="card-icon" style="background: linear-gradient(180deg, rgba(124,58,237,.22), rgba(124,58,237,.04)); border-color: rgba(124,58,237,.35); color: var(--klyver-violet-200);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="tag violet">Premium</span>
+        </div>
+        <h3 class="card-title">Conversão por design</h3>
+        <p>Hierarquia visual rígida, CTA inequívoco e ritmo de leitura calculado para fluxos de venda complexos.</p>
+      </article>
+
+      <article class="card glow-cyan">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12c4-9 14-9 18 0-4 9-14 9-18 0z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <span class="tag">Identidade</span>
+        </div>
+        <h3 class="card-title">DNA visual coeso</h3>
+        <p>Anéis topográficos, ciano luminoso e o K-Mark — três elementos repetidos com intenção em todos os pontos de contato.</p>
+      </article>
+    </div>
+
+    <!-- Inputs / Forms -->
+    <h3 class="mb-4 mt-12">Formulários</h3>
+    <div class="card">
+      <div class="grid cols-2">
+        <div class="field">
+          <label for="nome">Nome completo</label>
+          <input id="nome" class="input" placeholder="Ex.: Bruna Souza" />
+          <span class="help">Como você quer ser anunciada no lançamento.</span>
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" class="input" placeholder="voce@dominio.com" />
+        </div>
+        <div class="field">
+          <label for="nicho">Nicho</label>
+          <select id="nicho" class="select">
+            <option>Educação digital</option>
+            <option>Saúde & longevidade</option>
+            <option>Finanças</option>
+            <option>Marketing & negócios</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="invest">Investimento</label>
+          <input id="invest" class="input" placeholder="R$ 0,00" />
+        </div>
+        <div class="field" style="grid-column: 1 / -1;">
+          <label for="msg">Conte sobre o seu lançamento</label>
+          <textarea id="msg" class="textarea" placeholder="Objetivo, prazo, audiência e o que precisa estar online…"></textarea>
+        </div>
+        <div class="field" style="grid-column: 1 / -1;">
+          <label>Newsletter rápida</label>
+          <div class="input-group">
+            <input class="input" placeholder="Receber playbook de lançamento" />
+            <button class="btn btn-primary btn-sm">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <h3 class="mb-4 mt-12">FAQ / Accordion</h3>
+    <div>
+      <details class="faq" open>
+        <summary>Em quanto tempo vocês entregam um projeto Klyver?</summary>
+        <p>O ciclo padrão é de 4 a 8 semanas, dependendo do escopo. Lançamentos enxutos podem rodar em sprint de 3 semanas com escopo congelado.</p>
+      </details>
+      <details class="faq">
+        <summary>O design system pode ser customizado para a minha marca?</summary>
+        <p>Sim. Os tokens (cor, tipografia, raio, espaçamento) são o ponto de entrada — trocamos a paleta e mantemos o sistema funcionando de ponta a ponta.</p>
+      </details>
+      <details class="faq">
+        <summary>Como funciona a manutenção depois da entrega?</summary>
+        <p>Oferecemos contratos mensais de evolução contínua com fila priorizada e SLA de resposta em até 24h úteis.</p>
+      </details>
+      <details class="faq">
+        <summary>Vocês integram com qual stack?</summary>
+        <p>Stack neutra: Next.js, Astro, WordPress headless, Webflow, Framer. A camada visual é a mesma — o que muda é o motor.</p>
+      </details>
+    </div>
+
+    <!-- Stats -->
+    <h3 class="mb-4 mt-12">Stats</h3>
+    <div class="grid cols-4">
+      <div class="card stat">
+        <div class="num text-gradient">+38</div>
+        <div class="label">Lançamentos no ar</div>
+      </div>
+      <div class="card stat">
+        <div class="num text-gradient">R$ 24M</div>
+        <div class="label">Movimentados em campanhas</div>
+      </div>
+      <div class="card stat">
+        <div class="num text-gradient">98%</div>
+        <div class="label">Retenção de clientes</div>
+      </div>
+      <div class="card stat">
+        <div class="num text-gradient">4.9/5</div>
+        <div class="label">NPS médio</div>
+      </div>
+    </div>
+
+    <!-- Iconography -->
+    <h3 class="mb-4 mt-12">Iconografia</h3>
+    <p class="muted mb-6">Estilo: stroke 2px, line-cap round, line-join round. Tamanhos base 16 / 22 / 28.</p>
+    <div class="grid cols-6">
+      <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg></div>
+      <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div>
+      <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h16"/></svg></div>
+      <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></div>
+      <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-7z"/></svg></div>
+      <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12A10 10 0 1 1 12 2"/><path d="M22 2L12 12"/></svg></div>
+      <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg></div>
+      <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9c2 0 3.6.7 5 1.8"/><path d="M21 5l-9 9-3-3"/></svg></div>
+      <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20l-7-4V8l7-4 7 4v8l-7 4z"/><path d="M12 12l7-4M12 12v8M12 12L5 8"/></svg></div>
+      <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V3l16 9-16 9z"/></svg></div>
+      <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4M14 6l-6 6 6 6"/></svg></div>
+    </div>
+
+    <!-- Testimonial / Expert card -->
+    <h3 class="mb-4 mt-12">Expert Card</h3>
+    <article class="card" style="padding: 0; overflow: hidden;">
+      <div style="display:grid; grid-template-columns: 1.4fr 1fr; gap: 0; min-height: 280px;">
+        <div style="padding: var(--sp-8); display:flex; flex-direction:column; justify-content: space-between; gap: var(--sp-6); background: linear-gradient(180deg, rgba(0,201,201,.05), transparent);">
+          <div class="row">
+            <span class="overline">Expert</span>
+            <span class="tag">LANÇAMENTOS</span>
+          </div>
+          <div>
+            <h2 style="font-size: clamp(1.8rem, 3.4vw, 2.6rem);">Bruna <span class="text-gradient">Souza</span></h2>
+            <p class="mt-3">Especialista em construção de autoridade digital para vozes femininas. Tração de seis dígitos em três lançamentos consecutivos.</p>
+          </div>
+          <div class="row">
+            <span class="tag">Perfil</span>
+            <span class="tag">Drive</span>
+            <span class="tag">Fotos</span>
+          </div>
+        </div>
+        <div style="position: relative; background: linear-gradient(160deg, #0A1320, #03060E); overflow: hidden;">
+          <svg width="100%" height="100%" viewBox="0 0 320 320" preserveAspectRatio="xMidYMid slice" style="position:absolute; inset:0;">
+            <g fill="none" stroke="#00C9C9" stroke-opacity=".4">
+              <circle cx="200" cy="160" r="40"/>
+              <circle cx="200" cy="160" r="70"/>
+              <circle cx="200" cy="160" r="100"/>
+              <circle cx="200" cy="160" r="130"/>
+              <circle cx="200" cy="160" r="160"/>
+            </g>
+          </svg>
+          <div style="position: absolute; inset:0; display:grid; place-items:center;">
+            <div style="width: 180px; height: 180px; border-radius: 50%; background: linear-gradient(160deg, var(--klyver-cyan-500), var(--klyver-violet-500)); display:grid; place-items:center; color: white; font-family: var(--font-display); font-size: 3rem; font-weight: 700; box-shadow: 0 20px 60px rgba(0,201,201,.4);">
+              BS
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="ds-divider"></div>
+
+  <!-- ===================== 04 · PATTERNS ===================== -->
+  <section id="patterns" class="section">
+    <div class="section-head">
+      <span class="ds-section-id">04 · Patterns</span>
+      <h2 class="display-2 mt-2">Padrões de composição</h2>
+      <p class="lead mt-4">Como os átomos se combinam em blocos. Use estes layouts como base — não como gaiola.</p>
+    </div>
+
+    <!-- Pattern: Feature row -->
+    <article class="card mb-6" style="padding: var(--sp-10);">
+      <div class="grid cols-2" style="align-items:center;">
+        <div>
+          <span class="overline">Pattern · Feature row</span>
+          <h2 class="mt-3">Você não precisa de um site. Precisa de um sistema.</h2>
+          <p class="lead mt-4">Conteúdo, automações, captura, conversão e relacionamento — vivendo em uma única estrutura visual coerente.</p>
+          <div class="row mt-6">
+            <button class="btn btn-primary">Conhecer a Klyver</button>
+            <button class="btn btn-ghost">Ver cases →</button>
+          </div>
+        </div>
+        <div style="position: relative; aspect-ratio: 4/3; border-radius: var(--r-lg); overflow: hidden; background:
+          radial-gradient(70% 60% at 50% 40%, rgba(0,201,201,.25), transparent 70%),
+          linear-gradient(180deg, #0A1320, #03060E);
+          border: 1px solid var(--stroke);">
+          <svg width="100%" height="100%" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" style="position:absolute; inset:0;">
+            <g fill="none" stroke="#00C9C9" stroke-opacity=".35">
+              <circle cx="200" cy="150" r="30"/>
+              <circle cx="200" cy="150" r="60"/>
+              <circle cx="200" cy="150" r="90"/>
+              <circle cx="200" cy="150" r="120"/>
+              <circle cx="200" cy="150" r="150"/>
+              <circle cx="200" cy="150" r="180"/>
+            </g>
+          </svg>
+          <div style="position:absolute; inset:0; display:grid; place-items:center;">
+            <span class="logo-glyph" style="width: 96px; height: 96px; border-radius: 24px;">
+              <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
+                <path d="M9 4v24M9 17l11-13M9 17l11 11" stroke="url(#kg4)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs><linearGradient id="kg4" x1="6" y1="4" x2="26" y2="28"><stop stop-color="#BFF5F5"/><stop offset="1" stop-color="#00C9C9"/></linearGradient></defs>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Pattern: CTA banner -->
+    <article id="cta" class="card" style="text-align: center; padding: var(--sp-16); position: relative; overflow: hidden;">
+      <div aria-hidden="true" style="position:absolute; inset:-30%; background:
+        radial-gradient(40% 40% at 30% 50%, rgba(0,201,201,.20), transparent 70%),
+        radial-gradient(40% 40% at 70% 50%, rgba(124,58,237,.22), transparent 70%);
+        pointer-events:none;"></div>
+      <div style="position:relative;">
+        <span class="overline">Pattern · CTA</span>
+        <h2 class="display-2 mt-3">Chega de estrutura genérica.</h2>
+        <p class="lead mt-4" style="max-width: 560px; margin-inline: auto;">Receba um diagnóstico gratuito do seu projeto digital atual com nosso time de especialistas.</p>
+        <div class="row center mt-6">
+          <button class="btn btn-primary btn-lg">
+            Agendar diagnóstico
+            <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="btn btn-secondary btn-lg">Ver portfólio</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Pattern: Stats strip -->
+    <div class="grid cols-4 mt-6">
+      <div class="card stat" style="text-align: center;">
+        <div class="num text-gradient">5min</div>
+        <div class="label">Para diagnóstico</div>
+      </div>
+      <div class="card stat" style="text-align: center;">
+        <div class="num text-gradient">100%</div>
+        <div class="label">Sob medida</div>
+      </div>
+      <div class="card stat" style="text-align: center;">
+        <div class="num text-gradient">24h</div>
+        <div class="label">SLA de retorno</div>
+      </div>
+      <div class="card stat" style="text-align: center;">
+        <div class="num text-gradient">0</div>
+        <div class="label">Templates</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="between">
+      <div class="logo-mark">
+        <span class="logo-glyph" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
+            <path d="M9 4v24M9 17l11-13M9 17l11 11" stroke="url(#kg5)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs><linearGradient id="kg5" x1="6" y1="4" x2="26" y2="28"><stop stop-color="#80EAEA"/><stop offset="1" stop-color="#00C9C9"/></linearGradient></defs>
+          </svg>
+        </span>
+        <span class="logo-word">KLYVER</span>
+      </div>
+      <p class="mono">© 2026 · Design System v1.0</p>
+    </div>
+    <p class="mt-4" style="max-width: 640px;">Você não precisa de um site. Precisa de um sistema.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
